@@ -11,22 +11,20 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set navbar background when scrolled
       setIsScrolled(window.scrollY > 10);
       
-      // Update active section based on scroll position
       const sections = document.querySelectorAll('section[id]');
+      let currentSection = 'home';
       
       sections.forEach(section => {
         const el = section as HTMLElement;
-        const sectionTop = el.offsetTop - 100;
-        const sectionHeight = el.offsetHeight;
-        const sectionId = el.getAttribute('id') || '';
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 150) {
+          currentSection = el.getAttribute('id') || 'home';
         }
       });
+      
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -37,7 +35,7 @@ const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
     if (element) {
-      const yOffset = -80; // Navbar height offset
+      const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -79,7 +77,6 @@ const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-full transition-colors ${
@@ -95,7 +92,6 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            {/* Theme Toggle Button for Mobile */}
             <button 
               onClick={toggleTheme}
               className={`p-2 rounded-full transition-colors ${
@@ -123,7 +119,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <nav className={`md:hidden ${
-          theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+          theme === 'dark' ? 'bg-gray-800/95 backdrop-blur-sm' : 'bg-white/95 backdrop-blur-sm'
         } p-4 animate-fade-in`}>
           <div className="flex flex-col space-y-2">
             {navItems.map((item) => (

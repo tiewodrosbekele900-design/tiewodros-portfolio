@@ -109,38 +109,45 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
 
-            {/* Artistic Work Section */}
-            <div 
-              onClick={() => setActiveModal('artistic')}
-              className={`group cursor-pointer rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${
-                theme === 'dark' ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700' : 'bg-white/80 backdrop-blur-sm border border-gray-200'
-              } shadow-xl hover:shadow-purple-500/20 relative`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#E4002B]/10 via-[#FED100]/5 to-[#009A44]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div 
-                className="relative h-80 bg-center bg-cover flex items-center justify-center"
-                style={{ backgroundImage: "url('/DS.JPG')" }}
-              >
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
-                <Play size={64} className="relative z-10 text-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
-              </div>
-              <div className="p-8 relative z-10">
-                <h3 className={`text-2xl font-bold mb-4 ${
-                  theme === 'dark' ? 'text-white' : 'text-gray-900'
-                }`}>
-                  Artistic Works
-                </h3>
-                <p className={`text-lg mb-6 ${
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                }`}>
-                  Music videos, painting, video Editing & directing and creative multimedia projects.
-                </p>
-                <div className="flex items-center text-teal-500 font-semibold group-hover:text-teal-400 transition-colors">
-                  <span>View Works</span>
-                  <ArrowLeft size={20} className="ml-2 rotate-180 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </div>
+            {/* Artistic Work Section - With "Coming Soon" Badge */}
+<div 
+  onClick={() => setActiveModal('artistic')}
+  className={`group cursor-pointer rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl ${
+    theme === 'dark' ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700' : 'bg-white/80 backdrop-blur-sm border border-gray-200'
+  } shadow-xl hover:shadow-purple-500/20 relative`}
+>
+  {/* "Coming Soon" Badge */}
+  <div className="absolute top-4 right-4 z-20">
+    <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-[#FED100] to-[#E4002B] rounded-full animate-pulse">
+      🚀 Coming Soon
+    </span>
+  </div>
+  
+  <div className="absolute inset-0 bg-gradient-to-br from-[#E4002B]/10 via-[#FED100]/5 to-[#009A44]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  <div 
+    className="relative h-80 bg-center bg-cover flex items-center justify-center"
+    style={{ backgroundImage: "url('/DS.JPG')" }}
+  >
+    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors" />
+    <Play size={64} className="relative z-10 text-white opacity-50 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+  </div>
+  <div className="p-8 relative z-10">
+    <h3 className={`text-2xl font-bold mb-4 ${
+      theme === 'dark' ? 'text-white' : 'text-gray-900'
+    }`}>
+      Artistic Works
+    </h3>
+    <p className={`text-lg mb-6 ${
+      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+    }`}>
+      Music videos, painting, video editing & directing and creative multimedia projects.
+    </p>
+    <div className="flex items-center text-teal-500 font-semibold group-hover:text-teal-400 transition-colors">
+      <span>Coming Soon</span>
+      <ArrowLeft size={20} className="ml-2 rotate-180 group-hover:translate-x-1 transition-transform" />
+    </div>
+  </div>
+</div>
           </div>
         </div>
 
