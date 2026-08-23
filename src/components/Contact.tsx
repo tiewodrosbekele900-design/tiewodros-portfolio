@@ -5,10 +5,10 @@ import { Send, Github as GithubIcon, Linkedin, Youtube, Instagram, Mail, MapPin,
 import { useTheme } from '../context/ThemeContext';
 import EthiopianAmbientBackground from './EthiopianAmbientBackground';
 
-// ✅ YOUR CORRECT EMAILJS CREDENTIALS
-const SERVICE_ID = 'service_8x1ncqr';
-const TEMPLATE_ID = 'template_9612gmk';
-const PUBLIC_KEY = 'cJY-56CPf0N_ThgWf';
+// ✅ UPDATE with your NEW Service ID
+const SERVICE_ID = 'service_uzhwabh';
+const TEMPLATE_ID = 'template_9612gmk';  // Keep this (if exists)
+const PUBLIC_KEY = 'cJY-56CPf0N_ThgWf';  // Keep this
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
