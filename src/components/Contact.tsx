@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { socialLinks } from '../data/navigationData';
 import { Send, Github as GithubIcon, Linkedin, Youtube, Instagram, Mail, MapPin, Phone } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';  // ✅ FIXED!
 import EthiopianAmbientBackground from './EthiopianAmbientBackground';
 
-// ✅ UPDATE with your NEW Service ID
+// ✅ YOUR CORRECT CREDENTIALS
 const SERVICE_ID = 'service_uzhwabh';
-const TEMPLATE_ID = 'template_9612gmk';  // Keep this (if exists)
-const PUBLIC_KEY = 'cJY-56CPf0N_ThgWf';  // Keep this
+const TEMPLATE_ID = 'template_9612gmk';
+const PUBLIC_KEY = 'cJY-56CPf0N_ThgWf';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
-  const { theme } = useTheme();
+  const { theme } = useTheme();  // ✅ FIXED!
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -75,7 +75,6 @@ const Contact: React.FC = () => {
   return (
     <EthiopianAmbientBackground>
       <section id="contact" className="py-20 relative overflow-hidden">
-        {/* Glassmorphism overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         
         <div className="section-container relative z-10">
@@ -144,7 +143,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Social Links - Enhanced */}
+              {/* Social Links */}
               <div className={`flex space-x-4 mt-6 p-4 rounded-2xl ${
                 theme === 'dark' 
                   ? 'bg-gray-900/60 backdrop-blur-md border border-gray-800' 
@@ -170,7 +169,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Contact Form - Enhanced */}
+            {/* RIGHT COLUMN: Contact Form */}
             <div>
               <div className={`p-6 rounded-2xl ${
                 theme === 'dark' 
