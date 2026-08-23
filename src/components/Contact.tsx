@@ -5,10 +5,10 @@ import { Send, Github as GithubIcon, Linkedin, Youtube, Instagram, Mail, MapPin,
 import { useTheme } from '../context/ThemeContext';  // ✅ FIXED!
 import EthiopianAmbientBackground from './EthiopianAmbientBackground';
 
-// ✅ YOUR CORRECT CREDENTIALS
+// ✅ YOUR CORRECT CREDENTIALS - MATCHES EMAILJS DASHBOARD!
 const SERVICE_ID = 'service_uzhwabh';
-const TEMPLATE_ID = 'template_9612gmk';
-const PUBLIC_KEY = 'cJY-56CPf0N_ThgWf';
+const TEMPLATE_ID = 'template_96l2gmk';     // ← 'l' not '1'!
+const PUBLIC_KEY = 'cJY-56CPf0N_ThgWF';     // ← 'F' uppercase!
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
