@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
         <div className="section-container relative z-10">
           <h2 className={`section-title ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Get In Touch</h2>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-10 md:mt-16">
             {/* LEFT COLUMN: Contact Info */}
             <div>
               <div className={`p-6 rounded-2xl ${

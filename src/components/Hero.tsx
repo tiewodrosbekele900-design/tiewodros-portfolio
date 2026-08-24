@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
         <div className="section-container relative z-10">
           {/* Full-width animated title at the top */}
           <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
               <span
                 className={`inline-block transform transition-all duration-700 ease-out bg-gradient-to-r ${gradients[colorIndex]} bg-clip-text text-transparent ${
                   flip ? 'opacity-0 -translate-y-1' : 'opacity-100 translate-y-0'
@@ -76,14 +76,14 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Two-column layout below the title */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             
             {/* LEFT COLUMN: Profile Image, Subheading, Bio */}
             <div className={`flex flex-col items-start space-y-6 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
               
               {/* Profile image with gradient border - Glassmorphism style */}
               <div className="relative mx-auto md:mx-0">
-                <div className="rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 p-1.5 bg-gradient-to-r from-[#009A44] via-[#FED100] to-[#E4002B] shadow-2xl shadow-green-500/20">
+                <div className="rounded-full overflow-hidden w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 p-1.5 bg-gradient-to-r from-[#009A44] via-[#FED100] to-[#E4002B] shadow-2xl shadow-green-500/20">
                   <div className="rounded-full overflow-hidden w-full h-full bg-gray-900/80 backdrop-blur-sm p-1">
                     <img 
                       src={profileImage} 
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
                   ? 'bg-gray-900/60 backdrop-blur-md border border-gray-800' 
                   : 'bg-white/60 backdrop-blur-md border border-gray-200'
               }`}>
-                <h2 className={`text-xl sm:text-2xl ${
+                <h2 className={`text-lg sm:text-xl ${
                   theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
                 } font-light`}>
                   IT Specialist & Multidisciplinary Artist (Musician)
@@ -152,7 +152,7 @@ const Hero: React.FC = () => {
                   <img 
                     src={cvImage} 
                     alt="Full-Length CV Preview" 
-                    className="w-full h-auto max-h-[500px] object-cover object-top rounded-lg"
+                    className="w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] object-cover object-top rounded-lg"
                   />
                 </div>
               </div>

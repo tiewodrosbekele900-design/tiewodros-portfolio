@@ -69,7 +69,7 @@ const About: React.FC = () => {
               </div>
 
               {/* Quick Stats - Enhanced with glowing borders */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
+              <div className="grid grid-cols-3 gap-2 md:gap-4 pt-4">
                 <div className={`text-center p-4 rounded-xl ${
                   theme === 'dark' ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700' : 'bg-white/80 backdrop-blur-sm border border-gray-200'
                 } transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/20`}>
@@ -134,7 +134,7 @@ const About: React.FC = () => {
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
               }`}>My Skills</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {/* Development Skills */}
                 <div
                   className={`p-6 space-y-4 relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 border ${

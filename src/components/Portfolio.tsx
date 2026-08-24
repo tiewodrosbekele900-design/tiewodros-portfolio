@@ -75,7 +75,7 @@ const Portfolio: React.FC = () => {
           <h2 className={`section-title ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>My Portfolio</h2>
           
           {/* Two Main Groups - Enhanced with glowing borders */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-10 md:mt-16">
             {/* Software/IT Solutions Section */}
             <div 
               onClick={() => setActiveModal('software')}
@@ -86,7 +86,7 @@ const Portfolio: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#009A44]/10 via-[#FED100]/5 to-[#E4002B]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div 
                 className="relative h-80 bg-center bg-cover flex items-center justify-center"
-                style={{ backgroundImage: "url('/soft.jpg')" }}
+                style={{ backgroundImage: "url('/portfolio.jpg')" }}
               >
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
                 <Code size={64} className="relative z-10 text-white opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
@@ -574,7 +574,8 @@ const Portfolio: React.FC = () => {
                 </button>
               </div>
               <div className="p-6 max-h-[80vh] overflow-y-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* ✅ Mobile-optimized grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {videoDirectionGallery.map((video, idx) => (
                     <div
                       key={video.id}
